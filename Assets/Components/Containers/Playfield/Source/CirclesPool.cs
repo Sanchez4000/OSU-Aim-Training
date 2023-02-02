@@ -12,7 +12,6 @@ namespace Components.Containers.Playfield
         [SerializeField] private Circle _prefab;
 
         private List<Circle> _pool = new List<Circle>();
-        private bool _isInit = false;
 
         public IEnumerable<Circle> Pool => _pool;
 
