@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace Components.Objects.HitCircle
+namespace Assets.Components.Circle.Source
 {
     [Serializable]
     public class CircleNumberView

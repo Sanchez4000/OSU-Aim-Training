@@ -1,12 +1,12 @@
 using System;
 
-namespace Components.Objects.HitCircle
+namespace Assets.Components.Circle.Source
 {
     public interface ICircle
     {
         public CircleNumber Number { get; }
         public CircleSize Size { get; }
 
-        public event Action<Circle> Clicked;
+        public event Action<HitCircle> Clicked;
     }
 }

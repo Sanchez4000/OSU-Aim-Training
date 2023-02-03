@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
-using Components.Objects.HitCircle;
-using Components.Containers.Playfield.Extensions;
+using Assets.Components.Circle.Source;
+using Assets.Components.Playfield.Extensions;
 
-namespace Components.Containers.Playfield
+namespace Assets.Components.Playfield.Source
 {
-    public class Playfield : MonoBehaviour
+    public class GamePlayfield : MonoBehaviour
     {
         [SerializeField] private CirclesPool _pool;
         [SerializeField] private float _zStep = 1f;
@@ -49,7 +49,7 @@ namespace Components.Containers.Playfield
                 );
             }
 
-            Circle circle = _pool.Pull();
+            HitCircle circle = _pool.Pull();
             float localX = _size.Width * (x - 0.5f);
             float localY = _size.Height * (y - 0.5f);
 
@@ -58,21 +58,21 @@ namespace Components.Containers.Playfield
 
             return circle;
         }
-        public void RemoveCircle(Circle circle)
+        public void RemoveCircle(HitCircle circle)
         {
             _pool.Push(circle);
             circle.gameObject.SetActive(false);
         }
         public void RemoveCircle(ICircle circle)
         {
-            RemoveCircle((Circle)circle);
+            RemoveCircle((HitCircle)circle);
         }
 
         private void Start()
         {
             _pool.Initialize();
         }
-        private void PutCircle(Circle circle)
+        private void PutCircle(HitCircle circle)
         {
             circle.transform.parent = transform;
             circle.gameObject.SetActive(true);

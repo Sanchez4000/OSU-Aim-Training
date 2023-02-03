@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
+using Assets.Components.Circle.Source;
 using Code.Extensions;
-using Components.Objects.HitCircle;
 using UnityEngine;
 
-namespace Components.Containers.Playfield
+namespace Assets.Components.Playfield.Source
 {
     [Serializable]
     public class CirclesPool
     {
-        [SerializeField] private Circle _prefab;
+        [SerializeField] private HitCircle _prefab;
 
-        private List<Circle> _pool = new List<Circle>();
+        private List<HitCircle> _pool = new List<HitCircle>();
 
-        public IEnumerable<Circle> Pool => _pool;
+        public IEnumerable<HitCircle> Pool => _pool;
 
         public void Initialize(uint elemenstCount = 10)
         {
@@ -26,27 +26,27 @@ namespace Components.Containers.Playfield
 
             GenerateBasePool(elemenstCount);
         }
-        public Circle Pull()
+        public HitCircle Pull()
         {
-            Circle circle = _pool.Count > 0 ? _pool.Last() : MonoBehaviour.Instantiate(_prefab);
+            HitCircle HitCircle = _pool.Count > 0 ? _pool.Last() : UnityEngine.Object.Instantiate(_prefab);
 
-            if (_pool.Contains(circle))
+            if (_pool.Contains(HitCircle))
             {
-                _pool.Remove(circle);
+                _pool.Remove(HitCircle);
             }
 
-            return circle;
+            return HitCircle;
         }
-        public void Push(Circle circle)
+        public void Push(HitCircle HitCircle)
         {
-            _pool.Add(circle);
+            _pool.Add(HitCircle);
         }
 
         private void GenerateBasePool(uint count)
         {
             for (int i = 0; i < count; i++)
             {
-                var instance = MonoBehaviour.Instantiate(_prefab);
+                var instance = UnityEngine.Object.Instantiate(_prefab);
                 instance.gameObject.SetActive(false);
 
                 _pool.Add(instance);

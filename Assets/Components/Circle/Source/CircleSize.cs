@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
 
-namespace Components.Objects.HitCircle
+namespace Assets.Components.Circle.Source
 {
-    [Serializable] public class CircleSize
+    [Serializable]
+    public class CircleSize
     {
         private const float BASE_HEIGHT = 768F;
         private const int IMAGE_SIZE = 128;

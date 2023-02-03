@@ -1,10 +1,11 @@
+using Assets.Components.Playfield.Source;
 using UnityEngine;
 
-namespace Components.Containers.Playfield.Tests
+namespace Assets.Components.Playfield.Tests
 {
     public class SetCircleTest : MonoBehaviour
     {
-        [SerializeField] private Playfield _inspected;
+        [SerializeField] private GamePlayfield _inspected;
 
         public void Test()
         {

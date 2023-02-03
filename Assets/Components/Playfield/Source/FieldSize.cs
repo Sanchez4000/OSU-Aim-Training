@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
 
-namespace Components.Containers.Playfield
+namespace Assets.Components.Playfield.Source
 {
-    [Serializable] public class FieldSize
+    [Serializable]
+    public class FieldSize
     {
         private const int DEFAULT_SCREEN_HEIGHT = 480;
         private const int DEFAULT_FIELD_HEIGHT = 376;

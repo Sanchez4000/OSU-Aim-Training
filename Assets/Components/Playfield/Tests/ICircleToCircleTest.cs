@@ -1,11 +1,12 @@
-using Components.Objects.HitCircle;
+using Assets.Components.Circle.Source;
+using Assets.Components.Playfield.Source;
 using UnityEngine;
 
-namespace Components.Containers.Playfield.Tests
+namespace Assets.Components.Playfield.Tests
 {
     public class ICircleToCircleTest : MonoBehaviour
     {
-        [SerializeField] private Playfield _playfield;
+        [SerializeField] private GamePlayfield _playfield;
 
         public void Test()
         {
@@ -14,7 +15,7 @@ namespace Components.Containers.Playfield.Tests
 
             var circle = _playfield.SetCircle(x, y);
             ICircle iCircle = circle;
-            Circle normalCircle = (Circle)iCircle;
+            HitCircle normalCircle = (HitCircle)iCircle;
 
             Debug.Log(circle);
             Debug.Log(iCircle);

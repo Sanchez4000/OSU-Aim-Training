@@ -1,15 +1,15 @@
 using System;
 using UnityEngine;
 
-namespace Components.Objects.HitCircle
+namespace Assets.Components.Circle.Source
 {
-    public class Circle : MonoBehaviour, ICircle
+    public class HitCircle : MonoBehaviour, ICircle
     {
         [SerializeField] private CircleNumber _number;
 
         private CircleSize _size;
 
-        public event Action<Circle> Clicked;
+        public event Action<HitCircle> Clicked;
 
         public CircleNumber Number => _number;
         public CircleSize Size => _size;
