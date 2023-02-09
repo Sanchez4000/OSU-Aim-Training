@@ -8,6 +8,6 @@ namespace Assets.Components.Circle.Source
         public CircleNumber Number { get; }
         public CircleSize Size { get; }
 
-        public event Action<HitCircle> Clicked;
+        public event Action<IHitCircle> Clicked;
     }
 }

@@ -6,17 +6,33 @@ using Assets.Components.Playfield.Source.Extensions;
 
 namespace Assets.Components.Playfield.Source
 {
-    public class GamePlayfield : MonoBehaviour
+    public class GamePlayfield : MonoBehaviour, IGamePlayfield
     {
         [SerializeField] private CirclesPool _pool;
         [SerializeField] private float _zStep = 1f;
 
         private FieldSize _size = new FieldSize();
         private int _zIndex = 0;
+        private float _circleSize = 2F;
 
-        public FieldSize Size => _size;
+        public float CircleSize
+        {
+            get => _circleSize;
+            set
+            {
+                if (value < 2F || value > 7F)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        "Значение CircleSize может быть в пределах от 2 до 7"
+                    );
+                }
 
-        private float ZCoord
+                _circleSize = value;
+            }
+        }
+
+        private FieldSize Size => _size;
+        private float ZIndex
         {
             get
             {
@@ -54,29 +70,30 @@ namespace Assets.Components.Playfield.Source
             float localX = _size.Width * (x - 0.5f);
             float localY = _size.Height * (y - 0.5f);
 
-            PutCircle(circle);
-            circle.SetPosition(localX, localY, ZCoord);
+            EnableCircle(circle);
+            circle.SetPosition(localX, localY, ZIndex);
+            circle.Size.Set(CircleSize);
 
             return circle;
         }
-        public void RemoveCircle(HitCircle circle)
-        {
-            _pool.Push(circle);
-            circle.gameObject.SetActive(false);
-        }
         public void RemoveCircle(IHitCircle circle)
         {
-            RemoveCircle((HitCircle)circle);
+            DisableCircle((HitCircle)circle);
         }
 
         private void Start()
         {
             _pool.Initialize();
         }
-        private void PutCircle(HitCircle circle)
+        private void EnableCircle(HitCircle circle)
         {
             circle.transform.parent = transform;
             circle.gameObject.SetActive(true);
+        }
+        private void DisableCircle(HitCircle circle)
+        {
+            _pool.Push(circle);
+            circle.gameObject.SetActive(false);
         }
     }
 }

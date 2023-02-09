@@ -11,8 +11,6 @@ namespace Assets.Components.Circle.Source.Modules
         private int _value = 0;
         private bool _isVisible = true;
 
-        private event Action DataChanged;
-
         public int Value
         {
             get => _value;
@@ -26,7 +24,7 @@ namespace Assets.Components.Circle.Source.Modules
                 }
 
                 _value = value;
-                DataChanged?.Invoke();
+                UpdateView();
             }
         }
         public bool IsVisible
@@ -35,12 +33,9 @@ namespace Assets.Components.Circle.Source.Modules
             set
             {
                 _isVisible = value;
-                DataChanged?.Invoke();
+                UpdateView();
             }
         }
-
-        private void OnEnable() => DataChanged += UpdateView;
-        private void OnDisable() => DataChanged -= UpdateView;
 
         private void UpdateView() => _view.Text = _isVisible ? _value.ToString() : string.Empty;
     }

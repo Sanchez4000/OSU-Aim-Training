@@ -10,15 +10,14 @@ namespace Assets.Components.Circle.Source
 
         private CircleSize _size;
 
-        public event Action<HitCircle> Clicked;
+        public event Action<IHitCircle> Clicked;
 
         public CircleNumber Number => _number;
         public CircleSize Size => _size;
 
-        private void Start()
+        private void Awake()
         {
             _size = new CircleSize(transform);
-            _size.Set(0);
         }
         private void OnMouseOver()
         {
