@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Components.Playfield.Source
+namespace Assets.Components.Playfield.Source.Modules
 {
     [Serializable]
     public class FieldSize

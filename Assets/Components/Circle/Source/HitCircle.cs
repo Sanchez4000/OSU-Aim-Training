@@ -1,4 +1,5 @@
 using System;
+using Assets.Components.Circle.Source.Modules;
 using UnityEngine;
 
 namespace Assets.Components.Circle.Source

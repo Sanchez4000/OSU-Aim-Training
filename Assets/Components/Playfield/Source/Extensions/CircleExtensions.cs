@@ -1,7 +1,7 @@
 using Assets.Components.Circle.Source;
 using UnityEngine;
 
-namespace Assets.Components.Playfield.Extensions
+namespace Assets.Components.Playfield.Source.Extensions
 {
     public static class CircleExtensions
     {

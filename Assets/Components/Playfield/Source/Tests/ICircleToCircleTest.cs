@@ -1,8 +1,7 @@
 using Assets.Components.Circle.Source;
-using Assets.Components.Playfield.Source;
 using UnityEngine;
 
-namespace Assets.Components.Playfield.Tests
+namespace Assets.Components.Playfield.Source.Tests
 {
     public class ICircleToCircleTest : MonoBehaviour
     {

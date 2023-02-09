@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Components.Circle.Source
+namespace Assets.Components.Circle.Source.Modules
 {
     [Serializable]
     public class CircleNumber

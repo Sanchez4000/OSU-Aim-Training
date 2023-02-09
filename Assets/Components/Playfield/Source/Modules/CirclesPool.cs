@@ -4,7 +4,7 @@ using Assets.Components.Circle.Source;
 using Code.Extensions;
 using UnityEngine;
 
-namespace Assets.Components.Playfield.Source
+namespace Assets.Components.Playfield.Source.Modules
 {
     [Serializable]
     public class CirclesPool

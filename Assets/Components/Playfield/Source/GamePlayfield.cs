@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 using Assets.Components.Circle.Source;
-using Assets.Components.Playfield.Extensions;
+using Assets.Components.Playfield.Source.Modules;
+using Assets.Components.Playfield.Source.Extensions;
 
 namespace Assets.Components.Playfield.Source
 {
