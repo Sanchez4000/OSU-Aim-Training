@@ -3,7 +3,7 @@ using Assets.Components.Circle.Source.Modules;
 
 namespace Assets.Components.Circle.Source
 {
-    public interface ICircle
+    public interface IHitCircle
     {
         public CircleNumber Number { get; }
         public CircleSize Size { get; }

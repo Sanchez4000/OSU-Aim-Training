@@ -26,7 +26,7 @@ namespace Assets.Components.Playfield.Source
             }
         }
 
-        public ICircle SetCircle(float x, float y)
+        public IHitCircle SetCircle(float x, float y)
         {
             if (x < 0 || x > 1)
             {
@@ -64,7 +64,7 @@ namespace Assets.Components.Playfield.Source
             _pool.Push(circle);
             circle.gameObject.SetActive(false);
         }
-        public void RemoveCircle(ICircle circle)
+        public void RemoveCircle(IHitCircle circle)
         {
             RemoveCircle((HitCircle)circle);
         }

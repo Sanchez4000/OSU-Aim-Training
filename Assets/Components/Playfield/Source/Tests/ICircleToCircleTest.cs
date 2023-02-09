@@ -13,7 +13,7 @@ namespace Assets.Components.Playfield.Source.Tests
             float y = Random.Range(0F, 1F);
 
             var circle = _playfield.SetCircle(x, y);
-            ICircle iCircle = circle;
+            IHitCircle iCircle = circle;
             HitCircle normalCircle = (HitCircle)iCircle;
 
             Debug.Log(circle);

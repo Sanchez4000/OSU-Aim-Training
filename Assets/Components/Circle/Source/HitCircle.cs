@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Components.Circle.Source
 {
-    public class HitCircle : MonoBehaviour, ICircle
+    public class HitCircle : MonoBehaviour, IHitCircle
     {
         [SerializeField] private CircleNumber _number;
 
